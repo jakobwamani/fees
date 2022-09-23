@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Quick Fees Check</h1>
+ 
+  <h1>Update School Names</h1>
+    <form method="POST"> 
+        <!-- Security token by Django -->
+        {% csrf_token %} 
+
+        <!-- form as paragraph -->
+        {{ form.as_p }} 
+
+        <input type="submit" value="Update"> 
+    </form> 
+ 
+{% endblock %}

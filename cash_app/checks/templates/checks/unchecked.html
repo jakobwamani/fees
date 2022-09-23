@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Un Checked Fees</h1>
+  <!-- <p>Welcome to LocalLibrary, a website developed by <em>Mozilla Developer Network</em>!</p> -->
+  <!-- <h2>Quick</h2> -->
+  <!-- <p>The library has the following record counts:</p> -->
+  <ul>
+        <div>
+            <form method="POST"  enctype="multipart/form-data" autocomplete="on" >
+                <!-- Security token  Make sure you put this immediately after the form tag-->
+                {% csrf_token %}
+                {{ form.as_p }}
+            
+                <input type="submit" value="Submit">
+                
+            </form>
+            {{ form.as_media }}
+        </div>
+        <br/>
+        <li><a href="{% url 'see_unchecked_slips' %}">View UnChecked Slips</a></li>
+  </ul>
+{% endblock %}

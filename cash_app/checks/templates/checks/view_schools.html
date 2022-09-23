@@ -1,0 +1,41 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Quick Fees Check</h1>
+ 
+  <ul>
+    <h1>School Names</h1>
+    <form action="{% url 'see_schools' %}" method="post">
+                {% csrf_token %}
+               <table  width="100%" border="0" cellspacing="0" cellpadding="0" >
+                    <ul>
+        
+                    <tr>
+                        <th>School Id</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>School Name</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                       
+                    </tr>
+                    {% for name in school_names %}
+                    <tr>
+                        <td>{{ name.id}} </td>
+                        <td>{{ name.date }} </td>
+                        <td>{{ name.time }} </td>
+                        <td>{{ name.school_name }}</td>
+                        
+                        
+                        <!--I dnot know why i had to back reference it , it just couldn't work with it -->
+                        <td><a href="../update_schools/?id={{ name.id }}">Update</a></td>
+                        <td><a href="../delete_schools/?id={{ name.id }}">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+                </table>                             
+    </form>
+
+                    
+              
+  </ul>
+{% endblock %}

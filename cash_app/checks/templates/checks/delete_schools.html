@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Quick Fees Check</h1>
+  <h1>Delete a School Name</h1>
+  <form>
+      <h1> Delete Name</h1>
+      <form method="post">{% csrf_token %}
+          Are you sure you want to delete "{{ object }}" ?
+          <input type="submit" value="Submit" />
+      </form>
+      </div> 
+  </form>
+
+{% endblock %}
