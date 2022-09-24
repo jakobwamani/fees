@@ -11,8 +11,13 @@ urlpatterns = [
     path('view_schools/',views.view_schools,name='see_schools'),
     path('update_schools/',views.update_schools,name='update_schools'),
     path('delete_schools/',views.delete_schools,name='remove_school'),
-    path('unchecked/',views.get_unchecked_slips,name='get_unchecked'),
-    path('view_unchecked/',views.view_unchecked_slips,name='see_unchecked_slips'),
-    path('update_unchecked/',views.update_unchecked_slips,name='update_new_slips'),
-    path('delete_unchecked/',views.delete_unchecked_slips,name='remove_slip'),
+    path('status/',views.define_status,name='set_status'),
+    path('view_status/',views.view_status,name='see_status'),
+    path('update_status/',views.update_status,name='change_status'),
+    path('delete_status/',views.delete_status,name='remove_status'),
+    path('slips/',views.get_slips,name='get_slips'),
+    path('view_slips/',views.view_slips,name='see_slips'),
+    path('update_slip/',views.update_slips,name='update_slips'),
+    path('delete_slip/',views.delete_slip,name='remove_slip'),
+    
 ]

@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Quick Fees Check</h1>
+
+  <h1>Quick Fees Check</h1>
+  <h1>Slip Check</h1>
+  <form>
+      <h1>Check the Slip</h1>
+      <form method="post">{% csrf_token %}
+          Are you sure you want to Check "{{ object }}" ?
+          <input type="submit" value="Submit" />
+      </form>
+      </div> 
+  </form>
+
+ 
+{% endblock %}
